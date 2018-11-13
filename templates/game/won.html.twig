@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'won.title'|trans %}
+
+{% block content %}
+<h2>{{ 'won.headline'|trans }}</h2>
+
+<p>
+    {% trans with { '%word%': 'XXXXXXXXXXX'} %} won.info  {% endtrans %}
+
+</p>
+
+<p>
+    <a href="#" class="btn btn-default">{{ 'won.buton.play_again'|trans }}</a>
+</p>
+{% endblock %}

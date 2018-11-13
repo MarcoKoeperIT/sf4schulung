@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/build/app.cf12ff819bddb8b7d35c911e4dc50f87.css">
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div class="container">
+    <header class="row">
+        <div class="col-md-4">
+            <div id="logo">
+                <h1>
+                    <a href="../index.html">Hangman</a>
+                </h1>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <ul class="text-right">
+                <li>
+                    <a href="">English</a>
+                </li>
+                <li>
+                    <a href="">German</a>
+                </li>
+            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./home.html">Game</a>
+                    </li>
+                    <li>
+                        <a href="">Register</a>
+                    </li>
+                    <li>
+                        <a href="">Login / Logout</a>
+                    </li>
+                    <li>
+                        <a href="">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="content" class="box">
+                {% block content %} {% endblock %}
+            </div>
+            <div class="box">
+                {%  include('sidebar/testimonials.html.twig') %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="sidebar">
+                {{ render(controller('App\\Controller\\SidebarController::lastGames')) }}
+
+                {{ render(controller('App\\Controller\\SidebarController::lastPlayers')) }}
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>

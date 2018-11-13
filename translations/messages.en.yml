@@ -1,0 +1,8 @@
+won.title: You won
+won.headline: Congratulations
+won.info: Awesome, you won! The word was <strong>%word%</strong>
+won.buton.play_again: play again...s
+home.remaining_attempts: |
+  {0}You have not remaining attemtps|
+  {1}This is your last attempt.|
+  ]1,Inf] You have still %count% remaining attempts

@@ -1,0 +1,18 @@
+<div class="box">
+    <h3>Last games</h3>
+    <ul>
+            <div class="date-list">
+                <ul class="list date-list">
+                    {%  for game in games %}
+
+                        <li{% if loop.first %} class="first"{% elseif loop.last %} class="last"{% endif %}>
+                            <span class="date">{{ game.date|date('M j') }}</span>
+                            <a href="#">{{ game.text }}</a>
+
+                        </li>
+
+                    {%  endfor %}
+                </ul>
+            </div>
+    </ul>
+</div>
